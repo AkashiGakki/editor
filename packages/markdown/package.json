@@ -1,5 +1,5 @@
 {
-  "name": "app-1",
+  "name": "akashi_sai/markdown-react",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tiptap/react": "^2.0.0-beta.114",
+    "@tiptap/starter-kit": "^2.0.0-beta.191",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
