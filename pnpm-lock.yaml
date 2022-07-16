@@ -72,8 +72,14 @@ importers:
 
   packages/text-react:
     specifiers:
+      '@babel/core': ^7.18.6
+      '@babel/plugin-transform-react-jsx': ^7.18.6
+      '@babel/preset-react': ^7.18.6
       '@editor/core': workspace:*
+      '@iconify-json/carbon': ^1.1.6
+      '@iconify-json/radix-icons': ^1.1.4
       '@tiptap/core': 2.0.0-beta.182
+      '@tiptap/extension-underline': 2.0.0-beta.25
       '@tiptap/react': ^2.0.0-beta.114
       '@tiptap/starter-kit': ^2.0.0-beta.191
       '@types/react': ^18.0.15
@@ -82,6 +88,7 @@ importers:
       react: ^18.2.0
       react-dom: ^18.2.0
       typescript: ^4.6.4
+      unocss: ^0.44.3
       vite: ^3.0.0
     dependencies:
       '@editor/core': link:../core
@@ -90,11 +97,18 @@ importers:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
     devDependencies:
+      '@babel/core': 7.18.6
+      '@babel/plugin-transform-react-jsx': 7.18.6_@babel+core@7.18.6
+      '@babel/preset-react': 7.18.6_@babel+core@7.18.6
+      '@iconify-json/carbon': 1.1.6
+      '@iconify-json/radix-icons': 1.1.4
       '@tiptap/core': 2.0.0-beta.182
+      '@tiptap/extension-underline': 2.0.0-beta.25_jdrcmhoxj44u3cq7gnenksjiqq
       '@types/react': 18.0.15
       '@types/react-dom': 18.0.6
       '@vitejs/plugin-react': 2.0.0_vite@3.0.0
       typescript: 4.7.4
+      unocss: 0.44.3_vite@3.0.0
       vite: 3.0.0
 
   packages/text-vue:
@@ -437,6 +451,16 @@ packages:
       '@babel/helper-plugin-utils': 7.18.6
     dev: true
 
+  /@babel/plugin-transform-react-display-name/7.18.6_@babel+core@7.18.6:
+    resolution: {integrity: sha512-TV4sQ+T013n61uMoygyMRm+xf04Bd5oqFpv2jAEQwSZ8NwQA7zeRPg1LMVg2PWi3zWBz+CLKD+v5bcpZ/BS0aA==}
+    engines: {node: '>=6.9.0'}
+    peerDependencies:
+      '@babel/core': ^7.0.0-0
+    dependencies:
+      '@babel/core': 7.18.6
+      '@babel/helper-plugin-utils': 7.18.6
+    dev: true
+
   /@babel/plugin-transform-react-jsx-development/7.18.6_@babel+core@7.18.6:
     resolution: {integrity: sha512-SA6HEjwYFKF7WDjWcMcMGUimmw/nhNRDWxr+KaLSCrkD/LMDBvWRmHAYgE1HDeF8KUuI8OAu+RT6EOtKxSW2qA==}
     engines: {node: '>=6.9.0'}
@@ -479,6 +503,32 @@ packages:
       '@babel/helper-plugin-utils': 7.18.6
       '@babel/plugin-syntax-jsx': 7.18.6_@babel+core@7.18.6
       '@babel/types': 7.18.8
+    dev: true
+
+  /@babel/plugin-transform-react-pure-annotations/7.18.6_@babel+core@7.18.6:
+    resolution: {integrity: sha512-I8VfEPg9r2TRDdvnHgPepTKvuRomzA8+u+nhY7qSI1fR2hRNebasZEETLyM5mAUr0Ku56OkXJ0I7NHJnO6cJiQ==}
+    engines: {node: '>=6.9.0'}
+    peerDependencies:
+      '@babel/core': ^7.0.0-0
+    dependencies:
+      '@babel/core': 7.18.6
+      '@babel/helper-annotate-as-pure': 7.18.6
+      '@babel/helper-plugin-utils': 7.18.6
+    dev: true
+
+  /@babel/preset-react/7.18.6_@babel+core@7.18.6:
+    resolution: {integrity: sha512-zXr6atUmyYdiWRVLOZahakYmOBHtWc2WGCkP8PYTgZi0iJXDY2CN180TdrIW4OGOAdLc7TifzDIvtx6izaRIzg==}
+    engines: {node: '>=6.9.0'}
+    peerDependencies:
+      '@babel/core': ^7.0.0-0
+    dependencies:
+      '@babel/core': 7.18.6
+      '@babel/helper-plugin-utils': 7.18.6
+      '@babel/helper-validator-option': 7.18.6
+      '@babel/plugin-transform-react-display-name': 7.18.6_@babel+core@7.18.6
+      '@babel/plugin-transform-react-jsx': 7.18.6_@babel+core@7.18.6
+      '@babel/plugin-transform-react-jsx-development': 7.18.6_@babel+core@7.18.6
+      '@babel/plugin-transform-react-pure-annotations': 7.18.6_@babel+core@7.18.6
     dev: true
 
   /@babel/standalone/7.18.8:

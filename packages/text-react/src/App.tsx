@@ -1,4 +1,5 @@
 import './App.css'
+import 'uno.css'
 import MarkdownEditor from './components/MarkdownEditor'
 // import RenderEditor from './components/RenderEditor'
 

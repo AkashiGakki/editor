@@ -1,0 +1,55 @@
+* :deep() .ProseMirror-focused {
+  outline: none;
+}
+
+* :deep() .ProseMirror a {
+  color: #68cef8;
+}
+
+* :deep() .ProseMirror p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  color: #adb5bd;
+  pointer-events: none;
+  height: 0;
+}
+
+* :deep() .ProseMirror img.ProseMirror-selectednode {
+  outline: 3px solid #68cef8;
+}
+
+* :deep() .ProseMirror ul[data-type="taskList"] {
+  list-style: none;
+  padding: 0;
+}
+
+* :deep() .ProseMirror ul[data-type="taskList"] li {
+  display: flex;
+  align-items: center;
+}
+
+* :deep() .ProseMirror blockquote {
+  padding-left: 1rem;
+  border-left: 2px solid rgba(13, 13, 13, 0.1);
+}
+
+* :deep() .ProseMirror hr {
+  border: none;
+  border-top: 2px solid rgba(13, 13, 13, 0.1);
+  margin: 2rem 0;
+}
+
+* :deep() .ProseMirror pre {
+  background: #25292e;
+  color: #fff;
+  font-family: JetBrainsMono, monospace;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+}
+
+* :deep() .ProseMirror pre code {
+  color: inherit;
+  padding: 0;
+  background: none;
+  font-size: 0.8rem;
+}
