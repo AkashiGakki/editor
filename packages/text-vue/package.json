@@ -1,0 +1,33 @@
+{
+  "name": "@akashi_sai/text-vue",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@editor/core": "workspace:^0.0.0",
+    "@tiptap/starter-kit": "2.0.0-beta.191",
+    "@tiptap/vue-3": "2.0.0-beta.96",
+    "vue": "^3.2.37"
+  },
+  "devDependencies": {
+    "@iconify-json/carbon": "^1.1.6",
+    "@iconify-json/radix-icons": "^1.1.4",
+    "@tiptap/core": "2.0.0-beta.182",
+    "@tiptap/extension-strike": "2.0.0-beta.29",
+    "@tiptap/extension-underline": "2.0.0-beta.25",
+    "@types/node": "^18.0.5",
+    "@vitejs/plugin-vue": "^3.0.0",
+    "prosemirror-keymap": "^1.2.0",
+    "typescript": "^4.6.4",
+    "vite": "^3.0.0",
+    "vue-tsc": "^0.38.4",
+    "y-prosemirror": "^1.1.2",
+    "y-websocket": "^1.4.3",
+    "yjs": "^13.5.39"
+  }
+}
