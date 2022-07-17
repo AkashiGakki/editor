@@ -1,6 +1,6 @@
-# frontend-monorepo
+# editor
 
-Opinionated Frontend Monorepo Starter Template
+📄 A Lightweight Rich Text Editor.
 
 ## License
 
