@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import { computed, onBeforeUnmount, onMounted } from 'vue'
+import { computed, onBeforeUnmount, onMounted, unref } from 'vue'
+import { useMouse } from '@vueuse/core'
+
 import type { Editor } from '@tiptap/core'
 import { BubbleMenu, EditorContent, useEditor } from '@tiptap/vue-3'
 import StarterKit from '@tiptap/starter-kit'
@@ -14,6 +16,8 @@ import Gapcursor from '@tiptap/extension-gapcursor'
 import Highlight from '@tiptap/extension-highlight'
 import CodeBlockLowlight from '@tiptap/extension-code-block-lowlight'
 import { lowlight } from 'lowlight'
+import TextStyle from '@tiptap/extension-text-style'
+import Dropcursor from '@tiptap/extension-dropcursor'
 
 import { WebrtcProvider } from 'y-webrtc'
 import * as Y from 'yjs'
@@ -50,6 +54,8 @@ const editor: any = useEditor({
     CodeBlockLowlight.configure({
       lowlight,
     }),
+    TextStyle,
+    Dropcursor,
     // Link,
   ],
 })
@@ -71,6 +77,22 @@ const isUnderlineActive = computed(() => editor.value.isActive('underline'))
 
 const useHighlight = () => editor.value.chain().focus().toggleHighlight().run()
 const isHighlightActive = computed(() => editor.value.isActive('highlight'))
+
+const useColor = () => {
+  const input = document.createElement('input')
+  input.type = 'color'
+
+  const { x, y } = useMouse()
+  input.style.position = 'absolute'
+  input.style.top = unref(y).toString()
+  input.style.left = unref(x).toString()
+
+  input.onclick = (e) => {
+    editor.value.chain().focus().setColor((e.target as HTMLInputElement).value).run()
+  }
+  input.click()
+}
+const colorAttribute = computed(() => editor.value.getAttributes('textStyle').color)
 
 const useOrderedList = () => editor.value.chain().focus().toggleOrderedList().run()
 const isOrderedListActive = computed(() => editor.value.isActive('orderedList'))
@@ -126,6 +148,10 @@ onBeforeUnmount(() => {
     <button :class="{ 'is-active': isStrikeActive }" @click="useStrike">
       <div i-carbon:text-strikethrough title="删除线" />
     </button>
+
+    <!-- <button @click="useColor">
+      <div i-carbon:text-color title="文本颜色" />
+    </button> -->
 
     <button :class="{ 'is-active': isHighlightActive }" @click="useHighlight">
       <div i-carbon:text-fill title="文本高亮" />

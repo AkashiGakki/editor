@@ -11,6 +11,8 @@ import Gapcursor from '@tiptap/extension-gapcursor'
 import Highlight from '@tiptap/extension-highlight'
 import CodeBlockLowlight from '@tiptap/extension-code-block-lowlight'
 import { lowlight } from 'lowlight'
+import TextStyle from '@tiptap/extension-text-style'
+import Dropcursor from '@tiptap/extension-dropcursor'
 
 // import { WebrtcProvider } from 'y-webrtc'
 // import * as Y from 'yjs'
@@ -50,6 +52,8 @@ const MarkdownEditor = () => {
       CodeBlockLowlight.configure({
         lowlight,
       }),
+      TextStyle,
+      Dropcursor,
     ],
     // content: '<p>Typing…… 🎉</p>',
   })
