@@ -126,7 +126,7 @@ importers:
       vite: ^3.0.0
     dependencies:
       '@editor/core': link:../core
-      '@tiptap/react': 2.0.0-beta.114_biqbaboplfbrettd7655fr4n2y
+      '@tiptap/react': 2.0.0-beta.114_b7cpfzdww2wxjdqheg7veprq6i
       '@tiptap/starter-kit': 2.0.0-beta.191
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -153,12 +153,13 @@ importers:
       vite: ^3.0.0
       vue: ^3.2.37
       vue-tsc: ^0.38.4
+      y-prosemirror: ^1.1.2
       y-websocket: ^1.4.3
       yjs: ^13.5.39
     dependencies:
       '@editor/core': link:../core
       '@tiptap/starter-kit': 2.0.0-beta.191
-      '@tiptap/vue-3': 2.0.0-beta.96_vue@3.2.37
+      '@tiptap/vue-3': 2.0.0-beta.96_z53wbejway3kikyipxsiftrlse
       vue: 3.2.37
     devDependencies:
       '@types/node': 18.0.5
@@ -167,6 +168,7 @@ importers:
       typescript: 4.7.4
       vite: 3.0.0
       vue-tsc: 0.38.7_typescript@4.7.4
+      y-prosemirror: 1.1.2_6akf2dwqp3hiagrudzrnhefjii
       y-websocket: 1.4.3_yjs@13.5.39
       yjs: 13.5.39
 
@@ -953,11 +955,12 @@ packages:
     dependencies:
       '@tiptap/core': 2.0.0-beta.182
 
-  /@tiptap/extension-bubble-menu/2.0.0-beta.61:
+  /@tiptap/extension-bubble-menu/2.0.0-beta.61_jdrcmhoxj44u3cq7gnenksjiqq:
     resolution: {integrity: sha512-T3Yx+y1sUnXAJjK1CUfsQewSxOpDca9KzKqN2H9c9RZ9UlorR9XmZg6YYW7m9a7adeihj+o3cCO9jRd8dV+nnA==}
     peerDependencies:
       '@tiptap/core': ^2.0.0-beta.1
     dependencies:
+      '@tiptap/core': 2.0.0-beta.182
       prosemirror-state: 1.4.1
       prosemirror-view: 1.26.2
       tippy.js: 6.3.7
@@ -1045,11 +1048,12 @@ packages:
       '@tiptap/core': 2.0.0-beta.182
       prosemirror-dropcursor: 1.5.0
 
-  /@tiptap/extension-floating-menu/2.0.0-beta.56:
+  /@tiptap/extension-floating-menu/2.0.0-beta.56_jdrcmhoxj44u3cq7gnenksjiqq:
     resolution: {integrity: sha512-j/evHE/6UPGkIgXny9IGcAh0IrcnQmg0b2NBYebs2mqx9xYKYoe+0jVgNdLp/0M3MRgQCzyWTyatBDBFOUR2mw==}
     peerDependencies:
       '@tiptap/core': ^2.0.0-beta.1
     dependencies:
+      '@tiptap/core': 2.0.0-beta.182
       prosemirror-state: 1.4.1
       prosemirror-view: 1.26.2
       tippy.js: 6.3.7
@@ -1196,15 +1200,16 @@ packages:
       '@tiptap/core': 2.0.0-beta.182
     dev: true
 
-  /@tiptap/react/2.0.0-beta.114_biqbaboplfbrettd7655fr4n2y:
+  /@tiptap/react/2.0.0-beta.114_b7cpfzdww2wxjdqheg7veprq6i:
     resolution: {integrity: sha512-9JbRE+16WM6RxbBxzY74SrJtLodvjeRBnEbWxuhxVgGKxMunRj6r8oED87ODJgqLmkpofwE0KFHTPGdEXfdcKA==}
     peerDependencies:
       '@tiptap/core': ^2.0.0-beta.1
       react: ^17.0.0 || ^18.0.0
       react-dom: ^17.0.0 || ^18.0.0
     dependencies:
-      '@tiptap/extension-bubble-menu': 2.0.0-beta.61
-      '@tiptap/extension-floating-menu': 2.0.0-beta.56
+      '@tiptap/core': 2.0.0-beta.182
+      '@tiptap/extension-bubble-menu': 2.0.0-beta.61_jdrcmhoxj44u3cq7gnenksjiqq
+      '@tiptap/extension-floating-menu': 2.0.0-beta.56_jdrcmhoxj44u3cq7gnenksjiqq
       prosemirror-view: 1.26.2
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -1233,14 +1238,15 @@ packages:
       '@tiptap/extension-strike': 2.0.0-beta.29_jdrcmhoxj44u3cq7gnenksjiqq
       '@tiptap/extension-text': 2.0.0-beta.17_jdrcmhoxj44u3cq7gnenksjiqq
 
-  /@tiptap/vue-3/2.0.0-beta.96_vue@3.2.37:
+  /@tiptap/vue-3/2.0.0-beta.96_z53wbejway3kikyipxsiftrlse:
     resolution: {integrity: sha512-KjrZ4dkqK42VO2c+V/iBWdJfj1NPUGdme+erOX3ZKrSpzMEAc1pUDLgkyehtU2N16kaz2E70nfve2OGl8JotYA==}
     peerDependencies:
       '@tiptap/core': ^2.0.0-beta.1
       vue: ^3.0.0
     dependencies:
-      '@tiptap/extension-bubble-menu': 2.0.0-beta.61
-      '@tiptap/extension-floating-menu': 2.0.0-beta.56
+      '@tiptap/core': 2.0.0-beta.182
+      '@tiptap/extension-bubble-menu': 2.0.0-beta.61_jdrcmhoxj44u3cq7gnenksjiqq
+      '@tiptap/extension-floating-menu': 2.0.0-beta.56_jdrcmhoxj44u3cq7gnenksjiqq
       prosemirror-state: 1.4.1
       prosemirror-view: 1.26.2
       vue: 3.2.37
@@ -5603,6 +5609,23 @@ packages:
       prosemirror-view: ^1.9.10
       y-protocols: ^1.0.1
       yjs: ^13.3.2
+    dependencies:
+      lib0: 0.2.51
+      prosemirror-model: 1.18.1
+      prosemirror-state: 1.4.1
+      prosemirror-view: 1.26.5
+      y-protocols: 1.0.5
+      yjs: 13.5.39
+    dev: true
+
+  /y-prosemirror/1.1.2_6akf2dwqp3hiagrudzrnhefjii:
+    resolution: {integrity: sha512-+5Pf30ugJIatxy8DAmRMhkiYCI2xxBg+T5Btg9G/7v5La0I5WpR/GT/Kg8RGLv8LiG4/c4bVAEEM+efyVehLIQ==}
+    peerDependencies:
+      prosemirror-model: ^1.7.1
+      prosemirror-state: ^1.2.3
+      prosemirror-view: ^1.9.10
+      y-protocols: ^1.0.1
+      yjs: ^13.5.38
     dependencies:
       lib0: 0.2.51
       prosemirror-model: 1.18.1
