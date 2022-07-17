@@ -1,0 +1,90 @@
+* :deep() .ProseMirror-focused {
+  outline: none;
+}
+
+* :deep() .ProseMirror a {
+  color: #68cef8;
+}
+
+* :deep() .ProseMirror p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  color: #adb5bd;
+  pointer-events: none;
+  height: 0;
+}
+
+* :deep() .ProseMirror img.ProseMirror-selectednode {
+  outline: 3px solid #68cef8;
+}
+
+* :deep() .ProseMirror ul[data-type="taskList"] {
+  list-style: none;
+  padding: 0;
+}
+
+* :deep() .ProseMirror ul[data-type="taskList"] li {
+  display: flex;
+  align-items: center;
+}
+
+* :deep() .ProseMirror blockquote {
+  padding-left: 1rem;
+  border-left: 2px solid rgba(13, 13, 13, 0.1);
+}
+
+* :deep() .ProseMirror hr {
+  border: none;
+  border-top: 2px solid rgba(13, 13, 13, 0.1);
+  margin: 2rem 0;
+}
+
+* :deep() .ProseMirror pre {
+  background: #25292e;
+  color: #fff;
+  font-family: Monaco, Menlo, JetBrainsMono, monospace;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+}
+
+* :deep() .ProseMirror pre code {
+  color: inherit;
+  padding: 0;
+  background: none;
+  font-size: 0.8rem;
+  font-family: Monaco, Menlo, JetBrainsMono, monospace;
+}
+
+/* Give a remote user a caret */
+* :deep() .collaboration-cursor__caret {
+  position: relative;
+  margin-left: -1px;
+  margin-right: -1px;
+  border-left: 1px solid #0D0D0D;
+  border-right: 1px solid #0D0D0D;
+  word-break: normal;
+  pointer-events: none;
+}
+
+/* Render the username above the caret */
+* :deep() .collaboration-cursor__label {
+  position: absolute;
+  top: -1.4em;
+  left: -1px;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  user-select: none;
+  color: #0D0D0D;
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px 3px 3px 0;
+  white-space: nowrap;
+}
+
+* :deep() mark {
+  background-color: #ffe066;
+  padding: 0.125em 0;
+  border-radius: 0.25em;
+  box-decoration-break: clone;
+}

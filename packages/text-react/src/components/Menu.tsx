@@ -18,9 +18,13 @@ const Menu = ({ editor }: Props) => {
 
   const useUnderline = () => editor.chain().focus().toggleUnderline().run()
 
+  const useHighlight = () => editor.chain().focus().toggleHighlight().run()
+
   const useOrderedList = () => editor.chain().focus().toggleOrderedList().run()
 
   const useBulletList = () => editor.chain().focus().toggleBulletList().run()
+
+  const useTaskList = () => editor.chain().focus().toggleTaskList().run()
 
   const useBlockquote = () => editor.chain().focus().toggleBlockquote().run()
 
@@ -54,12 +58,20 @@ const Menu = ({ editor }: Props) => {
         <div className="i-carbon:text-strikethrough" title="删除线" />
       </button>
 
+      <button className={editor.isActive('highlight') ? 'is-active' : ''} onClick={useHighlight}>
+        <div className="i-carbon:text-fill" title="文本高亮" />
+      </button>
+
       <button className={editor.isActive('orderedList') ? 'is-active' : ''} onClick={useOrderedList}>
         <div className="i-carbon:list-numbered" title="有序列表" />
       </button>
 
       <button className={editor.isActive('bulletList') ? 'is-active' : ''} onClick={useBulletList}>
         <div className="i-carbon:list" title="无序列表" />
+      </button>
+
+      <button className={editor.isActive('taskList') ? 'is-active' : ''} onClick={useTaskList}>
+        <div className="i-carbon:list-checked" title="任务列表" />
       </button>
 
       <button className={editor.isActive('blockquote') ? 'is-active' : ''} onClick={useBlockquote}>

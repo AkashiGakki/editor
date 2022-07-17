@@ -4,12 +4,52 @@ import type { Editor } from '@tiptap/core'
 import { BubbleMenu, EditorContent, useEditor } from '@tiptap/vue-3'
 import StarterKit from '@tiptap/starter-kit'
 import Underline from '@tiptap/extension-underline'
+import TaskItem from '@tiptap/extension-task-item'
+import TaskList from '@tiptap/extension-task-list'
+import Collaboration from '@tiptap/extension-collaboration'
+import CollaborationCursor from '@tiptap/extension-collaboration-cursor'
+import Placeholder from '@tiptap/extension-placeholder'
+import Image from '@tiptap/extension-image'
+import Gapcursor from '@tiptap/extension-gapcursor'
+import Highlight from '@tiptap/extension-highlight'
+import CodeBlockLowlight from '@tiptap/extension-code-block-lowlight'
+import { lowlight } from 'lowlight'
+
+import { WebrtcProvider } from 'y-webrtc'
+import * as Y from 'yjs'
+
+const ydoc = new Y.Doc()
+
+const provider = new WebrtcProvider('akashi-test', ydoc)
 
 const editor: any = useEditor({
-  content: '<p>Typing something you want…… 🎉</p>',
+  // content: '<p>Typing something you want…… 🎉</p>',
   extensions: [
     StarterKit,
     Underline,
+    TaskItem.configure({
+      nested: true,
+    }),
+    TaskList,
+    Collaboration.configure({
+      document: ydoc,
+    }),
+    // CollaborationCursor.configure({
+    //   provider,
+    //   user: {
+    //     name: '@akashi',
+    //     color: '#f783ac',
+    //   },
+    // }),
+    Placeholder.configure({
+      placeholder: 'Typing something you want…… 🎉',
+    }),
+    Image,
+    Gapcursor,
+    Highlight.configure({ multicolor: true }),
+    CodeBlockLowlight.configure({
+      lowlight,
+    }),
     // Link,
   ],
 })
@@ -29,11 +69,17 @@ const isStrikeActive = computed(() => editor.value.isActive('strike'))
 const useUnderline = () => editor.value.chain().focus().toggleUnderline().run()
 const isUnderlineActive = computed(() => editor.value.isActive('underline'))
 
+const useHighlight = () => editor.value.chain().focus().toggleHighlight().run()
+const isHighlightActive = computed(() => editor.value.isActive('highlight'))
+
 const useOrderedList = () => editor.value.chain().focus().toggleOrderedList().run()
 const isOrderedListActive = computed(() => editor.value.isActive('orderedList'))
 
 const useBulletList = () => editor.value.chain().focus().toggleBulletList().run()
 const isBulletListActive = computed(() => editor.value.isActive('bulletList'))
+
+const useTaskList = () => editor.value.chain().focus().toggleTaskList().run()
+const isTaskListActive = computed(() => editor.value.isActive('taskList'))
 
 const useBlockquote = () => editor.value.chain().focus().toggleBlockquote().run()
 const isBlockquoteActive = computed(() => editor.value.isActive('blockquote'))
@@ -49,7 +95,10 @@ const disabledUndo = computed(() => !editor.value.can().undo())
 const useRedo = () => editor.value.chain().focus().redo().run()
 const disabledRedo = computed(() => !editor.value.can().redo())
 
-onBeforeUnmount(() => editor.value.destroy())
+onBeforeUnmount(() => {
+  editor.value.destroy()
+  provider.destroy()
+})
 </script>
 
 <template>
@@ -78,12 +127,20 @@ onBeforeUnmount(() => editor.value.destroy())
       <div i-carbon:text-strikethrough title="删除线" />
     </button>
 
+    <button :class="{ 'is-active': isHighlightActive }" @click="useHighlight">
+      <div i-carbon:text-fill title="文本高亮" />
+    </button>
+
     <button :class="{ 'is-active': isOrderedListActive }" @click="useOrderedList">
       <div i-carbon:list-numbered title="有序列表" />
     </button>
 
     <button :class="{ 'is-active': isBulletListActive }" @click="useBulletList">
       <div i-carbon:list title="无序列表" />
+    </button>
+
+    <button :class="{ 'is-active': isTaskListActive }" @click="useTaskList">
+      <div i-carbon:list-checked title="任务列表" />
     </button>
 
     <button :class="{ 'is-active': isBlockquoteActive }" @click="useBlockquote">
@@ -103,60 +160,6 @@ onBeforeUnmount(() => editor.value.destroy())
 </template>
 
 <style scoped>
-* :deep() .ProseMirror-focused {
-  outline: none;
-}
-
-* :deep() .ProseMirror a {
-  color: #68cef8;
-}
-
-* :deep() .ProseMirror p.is-editor-empty:first-child::before {
-  content: attr(data-placeholder);
-  float: left;
-  color: #adb5bd;
-  pointer-events: none;
-  height: 0;
-}
-
-* :deep() .ProseMirror img.ProseMirror-selectednode {
-  outline: 3px solid #68cef8;
-}
-
-* :deep() .ProseMirror ul[data-type="taskList"] {
-  list-style: none;
-  padding: 0;
-}
-
-* :deep() .ProseMirror ul[data-type="taskList"] li {
-  display: flex;
-  align-items: center;
-}
-
-* :deep() .ProseMirror blockquote {
-  padding-left: 1rem;
-  border-left: 2px solid rgba(13, 13, 13, 0.1);
-}
-
-* :deep() .ProseMirror hr {
-  border: none;
-  border-top: 2px solid rgba(13, 13, 13, 0.1);
-  margin: 2rem 0;
-}
-
-* :deep() .ProseMirror pre {
-  background: #25292e;
-  color: #fff;
-  font-family: Monaco, Menlo, JetBrainsMono, monospace;
-  padding: 0.75rem 1rem;
-  border-radius: 0.5rem;
-}
-
-* :deep() .ProseMirror pre code {
-  color: inherit;
-  padding: 0;
-  background: none;
-  font-size: 0.8rem;
-  font-family: Monaco, Menlo, JetBrainsMono, monospace;
-}
+@import '../styles/TextEditor.css';
+@import '../styles/CodeLowLight.css';
 </style>
