@@ -18,7 +18,7 @@ const MarkdownEditor = () => {
   return (
     <div>
       {editor && <Menu editor={editor} />}
-      <EditorContent editor={editor} />
+      <EditorContent editor={editor} className="h-100 text-left" />
     </div>
   )
 }

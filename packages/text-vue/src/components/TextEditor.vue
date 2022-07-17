@@ -147,7 +147,7 @@ onBeforeUnmount(() => editor.value.destroy())
 * :deep() .ProseMirror pre {
   background: #25292e;
   color: #fff;
-  font-family: JetBrainsMono, monospace;
+  font-family: Monaco, Menlo, JetBrainsMono, monospace;
   padding: 0.75rem 1rem;
   border-radius: 0.5rem;
 }
@@ -157,5 +157,6 @@ onBeforeUnmount(() => editor.value.destroy())
   padding: 0;
   background: none;
   font-size: 0.8rem;
+  font-family: Monaco, Menlo, JetBrainsMono, monospace;
 }
 </style>
