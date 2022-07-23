@@ -1,6 +1,19 @@
 # editor
 
-📄 A Lightweight Rich Text Editor.
+📄 A Lightweight Rich Text Editor With Markdown.
+
+## Features
+
+- `CollaborationCursor`
+- `Floating Menu`
+- `Font Family`
+- `Heading`
+- `Image`
+- `Link`
+- `Mention`
+- `Table`
+- `TextAlign`
+- `Video`
 
 ## License
 

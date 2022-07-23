@@ -1,3 +1,4 @@
+import type { Editor } from '@tiptap/core'
 import { EditorContent, useEditor } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
 import Underline from '@tiptap/extension-underline'
@@ -12,7 +13,10 @@ import Highlight from '@tiptap/extension-highlight'
 import CodeBlockLowlight from '@tiptap/extension-code-block-lowlight'
 import { lowlight } from 'lowlight'
 import TextStyle from '@tiptap/extension-text-style'
+import { Color } from '@tiptap/extension-color'
 import Dropcursor from '@tiptap/extension-dropcursor'
+import Typography from '@tiptap/extension-typography'
+
 
 // import { WebrtcProvider } from 'y-webrtc'
 // import * as Y from 'yjs'
@@ -22,10 +26,9 @@ import Menu from './Menu'
 const MarkdownEditor = () => {
   // const ydoc = new Y.Doc()
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   // const provider = new WebrtcProvider('akashi-test', ydoc)
 
-  const editor = useEditor({
+  const editor: Editor = useEditor({
     extensions: [
       StarterKit,
       Underline,
@@ -48,23 +51,21 @@ const MarkdownEditor = () => {
       }),
       Image,
       Gapcursor,
+      Dropcursor,
       Highlight.configure({ multicolor: true }),
       CodeBlockLowlight.configure({
         lowlight,
       }),
       TextStyle,
-      Dropcursor,
+      Color,
+      Typography,
     ],
-    // content: '<p>Typing…… 🎉</p>',
-  })
-
-  // eslint-disable-next-line no-console
-  // console.log('editor', editor)
+  }) as Editor
 
   return (
     <div>
       {editor && <Menu editor={editor} />}
-      <EditorContent editor={editor} className="h-100 text-left" />
+      <EditorContent editor={editor as any} className="h-100 text-left" />
     </div>
   )
 }

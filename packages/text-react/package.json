@@ -1,5 +1,5 @@
 {
-  "name": "akashi_sai/text-react",
+  "name": "@use-kit/editor-react",
   "private": true,
   "version": "0.0.1",
   "type": "module",
@@ -9,7 +9,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@editor/core": "workspace:*",
     "@tiptap/react": "^2.0.0-beta.114",
     "@tiptap/starter-kit": "^2.0.0-beta.191",
     "react": "^18.2.0",

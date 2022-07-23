@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onBeforeUnmount, onMounted, unref } from 'vue'
+import { computed, onBeforeUnmount, onMounted, unref, ShallowRef } from 'vue'
 import { useMouse } from '@vueuse/core'
 
 import type { Editor } from '@tiptap/core'
@@ -17,7 +17,9 @@ import Highlight from '@tiptap/extension-highlight'
 import CodeBlockLowlight from '@tiptap/extension-code-block-lowlight'
 import { lowlight } from 'lowlight'
 import TextStyle from '@tiptap/extension-text-style'
+import { Color } from '@tiptap/extension-color'
 import Dropcursor from '@tiptap/extension-dropcursor'
+import Typography from '@tiptap/extension-typography'
 
 import { WebrtcProvider } from 'y-webrtc'
 import * as Y from 'yjs'
@@ -26,7 +28,7 @@ const ydoc = new Y.Doc()
 
 const provider = new WebrtcProvider('akashi-test', ydoc)
 
-const editor: any = useEditor({
+const editor: ShallowRef<Editor> = useEditor({
   // content: '<p>Typing something you want…… 🎉</p>',
   extensions: [
     StarterKit,
@@ -50,18 +52,16 @@ const editor: any = useEditor({
     }),
     Image,
     Gapcursor,
+    Dropcursor,
     Highlight.configure({ multicolor: true }),
     CodeBlockLowlight.configure({
       lowlight,
     }),
     TextStyle,
-    Dropcursor,
-    // Link,
+    Color,
+    Typography,
   ],
-})
-
-// eslint-disable-next-line no-console
-console.log('useEditor', editor)
+}) as ShallowRef<Editor>
 
 const useBold = () => editor.value.chain().focus().toggleBold().run()
 const isBoldActive = computed(() => editor.value.isActive('bold'))
@@ -78,20 +78,7 @@ const isUnderlineActive = computed(() => editor.value.isActive('underline'))
 const useHighlight = () => editor.value.chain().focus().toggleHighlight().run()
 const isHighlightActive = computed(() => editor.value.isActive('highlight'))
 
-const useColor = () => {
-  const input = document.createElement('input')
-  input.type = 'color'
-
-  const { x, y } = useMouse()
-  input.style.position = 'absolute'
-  input.style.top = unref(y).toString()
-  input.style.left = unref(x).toString()
-
-  input.onclick = (e) => {
-    editor.value.chain().focus().setColor((e.target as HTMLInputElement).value).run()
-  }
-  input.click()
-}
+const useColor = (e: Event) => editor.value.chain().focus().setColor((e.target as HTMLInputElement).value).run()
 const colorAttribute = computed(() => editor.value.getAttributes('textStyle').color)
 
 const useOrderedList = () => editor.value.chain().focus().toggleOrderedList().run()
@@ -149,9 +136,10 @@ onBeforeUnmount(() => {
       <div i-carbon:text-strikethrough title="删除线" />
     </button>
 
-    <!-- <button @click="useColor">
+    <button @click="useColor">
+      <input type="color" class="op-0 absolute z-1 right-50%" :value="colorAttribute" @input="useColor($event)">
       <div i-carbon:text-color title="文本颜色" />
-    </button> -->
+    </button>
 
     <button :class="{ 'is-active': isHighlightActive }" @click="useHighlight">
       <div i-carbon:text-fill title="文本高亮" />
@@ -182,7 +170,7 @@ onBeforeUnmount(() => {
     </button>
   </div>
 
-  <EditorContent :editor="editor" h-100 text-left />
+  <EditorContent :editor="(editor as any)" h-100 text-left />
 </template>
 
 <style scoped>

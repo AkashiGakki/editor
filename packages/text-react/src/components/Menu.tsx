@@ -32,6 +32,9 @@ const Menu = ({ editor }: Props) => {
 
   const useHorizontalRule = () => editor.chain().focus().setHorizontalRule().run()
 
+  const useColor = (event: React.FormEvent<HTMLInputElement>) => editor.chain()
+    .setColor((event.target as HTMLInputElement).value).run()
+
   return (
     <>
       <button disabled={!editor.can().undo()} onClick={useUndo}>
@@ -56,6 +59,16 @@ const Menu = ({ editor }: Props) => {
 
       <button className={editor.isActive('strike') ? 'is-active' : ''} onClick={useStrike}>
         <div className="i-carbon:text-strikethrough" title="删除线" />
+      </button>
+
+      <button>
+        <input
+          className="op-0 absolute z-1 right-50%"
+          type="color"
+          onInput={(event: React.FormEvent<HTMLInputElement>) => useColor(event)}
+          value={editor.getAttributes('textStyle').color}
+        />
+        <div className="i-carbon:text-color" title="文本颜色" />
       </button>
 
       <button className={editor.isActive('highlight') ? 'is-active' : ''} onClick={useHighlight}>

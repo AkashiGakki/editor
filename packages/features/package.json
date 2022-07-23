@@ -1,5 +1,5 @@
 {
-  "name": "@editor/core",
+  "name": "@editor/examples",
   "type": "module",
   "version": "0.0.0",
   "packageManager": "pnpm@7.5.0",
@@ -15,6 +15,11 @@
     "start": "esno src/index.ts",
     "test": "vitest",
     "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "vue": "^3.2.37"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.25.1",
