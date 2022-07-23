@@ -1,12 +1,10 @@
 <script setup lang="ts">
 import TextEditor from './components/TextEditor.vue'
-import RenderEditor from './components/RenderEditor.vue'
 </script>
 
 <template>
   <div id="text">
     <TextEditor />
-    <!-- <RenderEditor /> -->
   </div>
 </template>
 
