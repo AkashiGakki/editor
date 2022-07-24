@@ -1,6 +1,5 @@
 import './App.css'
-import 'uno.css'
-import MarkdownEditor from './components/MarkdownEditor'
+import MarkdownEditor from '@use-kit/editor-react'
 
 function App() {
   return (

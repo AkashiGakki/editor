@@ -37,6 +37,7 @@
     "unbuild": "^0.7.4",
     "unocss": "^0.44.3",
     "vite": "^3.0.0",
+    "vite-plugin-dts": "^1.4.0",
     "vitest": "^0.18.0",
     "y-webrtc": "^10.2.3",
     "yjs": "^13.5.39"
