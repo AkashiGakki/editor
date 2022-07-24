@@ -1,5 +1,5 @@
 import type { Editor } from '@tiptap/core'
-import './Menu.css'
+import '../styles/Menu.css'
 
 interface Props {
   editor: Editor

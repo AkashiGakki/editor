@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@use-kit/editor-vue": "workspace:^0.0.1",
+    "@use-kit/editor-vue": "workspace:*",
     "vue": "^3.2.37"
   },
   "devDependencies": {

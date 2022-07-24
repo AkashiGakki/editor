@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import TextEditor from '@use-kit/editor-vue'
-console.log('t', TextEditor)
 </script>
 
 <template>
