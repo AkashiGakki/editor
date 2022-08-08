@@ -1,9 +1,27 @@
 {
   "name": "@use-kit/editor-vue",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "files": [
     "dist"
+  ],
+  "author": "Akashi Sai <akashi_sai@163.com>",
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/akashigakki",
+  "homepage": "https://github.com/akashigakki/editor#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akashigakki/editor.git"
+  },
+  "bugs": "https://github.com/akashigakki/editor/issues",
+  "keywords": [
+    "editor",
+    "markdown",
+    "text",
+    "typescript",
+    "javascript",
+    "vue",
+    "react"
   ],
   "main": "./dist/editor-vue.js",
   "module": "./dist/editor-vue.js",
