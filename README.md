@@ -12,11 +12,11 @@ pnpm i @use-kit/editor-vue
 
 ```vue
 <script setup lang="ts">
-import EditorVue from '@use-kit/editor-vue'
+import TextEditor from '@use-kit/editor-vue'
 </script>
 
 <template>
-  <EditorVue />
+  <TextEditor />
 </template>
 ```
 
@@ -27,12 +27,12 @@ pnpm i @use-kit/editor-react
 ```
 
 ```tsx
-import EditorText from '@use-kit/editor-react'
+import TextEditor from '@use-kit/editor-react'
 
 const EditorView = () => {
   return (
     <>
-      <EditorText />
+      <TextEditor />
     </>
   )
 }
