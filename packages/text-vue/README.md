@@ -2,8 +2,7 @@
 
 📄 A Lightweight Rich Text Editor With Markdown.
 
-[![NPM version](https://img.shields.io/npm/v/@use-kit/editor-vue
-?color=a1b858&label=)](https://www.npmjs.com/package/@use-kit/editor-vue)
+[![NPM version](https://img.shields.io/npm/v/@use-kit/editor-vue?color=a1b858&label=)](https://www.npmjs.com/package/@use-kit/editor-vue)
 
 ## Usage
 
