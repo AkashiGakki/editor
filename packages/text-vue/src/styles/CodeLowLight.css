@@ -1,112 +1,112 @@
-* :deep() .ProseMirror pre code .hljs-type {
+* :deep(.ProseMirror) pre code .hljs-type {
   color: rgb(241, 93, 118)
 }
 
-* :deep() .ProseMirror pre code .hljs-comment {
+* :deep(.ProseMirror) pre code .hljs-comment {
   color: #616161;
 }
 
-* :deep() .ProseMirror pre code .hljs-quote {
+* :deep(.ProseMirror) pre code .hljs-quote {
   color: #616161;
 }
 
-* :deep() .ProseMirror pre code .hljs-variable {
+* :deep(.ProseMirror) pre code .hljs-variable {
   color: #F98181;
 }
 
-* :deep() .ProseMirror pre code .hljs-template-variable {
+* :deep(.ProseMirror) pre code .hljs-template-variable {
   color: #F98181;
 }
 
-* :deep() .ProseMirror pre code .hljs-attribute {
+* :deep(.ProseMirror) pre code .hljs-attribute {
   color: #F98181;
 }
 
-* :deep() .ProseMirror pre code .hljs-tag {
+* :deep(.ProseMirror) pre code .hljs-tag {
   color: #F98181;
 }
 
-* :deep() .ProseMirror pre code .hljs-name {
+* :deep(.ProseMirror) pre code .hljs-name {
   color: #F98181;
 }
 
-* :deep() .ProseMirror pre code .hljs-regexp {
+* :deep(.ProseMirror) pre code .hljs-regexp {
   color: #F98181;
 }
 
-* :deep() .ProseMirror pre code .hljs-link {
+* :deep(.ProseMirror) pre code .hljs-link {
   color: #F98181;
 }
 
-* :deep() .ProseMirror pre code .hljs-name {
+* :deep(.ProseMirror) pre code .hljs-name {
   color: #F98181;
 }
 
-* :deep() .ProseMirror pre code .hljs-selector-id {
+* :deep(.ProseMirror) pre code .hljs-selector-id {
   color: #F98181;
 }
 
-* :deep() .ProseMirror pre code .hljs-selector-class {
+* :deep(.ProseMirror) pre code .hljs-selector-class {
   color: #F98181;
 }
 
-* :deep() .ProseMirror pre code .hljs-number {
+* :deep(.ProseMirror) pre code .hljs-number {
   color: #FBBC88;
 }
 
-* :deep() .ProseMirror pre code .hljs-meta {
+* :deep(.ProseMirror) pre code .hljs-meta {
   color: #FBBC88;
 }
 
-* :deep() .ProseMirror pre code .hljs-built_in {
+* :deep(.ProseMirror) pre code .hljs-built_in {
   color: #FBBC88;
 }
 
-* :deep() .ProseMirror pre code .hljs-builtin-name {
+* :deep(.ProseMirror) pre code .hljs-builtin-name {
   color: #FBBC88;
 }
 
-* :deep() .ProseMirror pre code .hljs-literal {
+* :deep(.ProseMirror) pre code .hljs-literal {
   color: #FBBC88;
 }
 
 
-* :deep() .ProseMirror pre code .hljs-params {
+* :deep(.ProseMirror) pre code .hljs-params {
   color: #FBBC88;
 }
 
-* :deep() .ProseMirror pre code .hljs-string {
+* :deep(.ProseMirror) pre code .hljs-string {
   color: #B9F18D;
 }
 
-* :deep() .ProseMirror pre code .hljs-symbol {
+* :deep(.ProseMirror) pre code .hljs-symbol {
   color: #B9F18D;
 }
 
-* :deep() .ProseMirror pre code .hljs-bullet {
+* :deep(.ProseMirror) pre code .hljs-bullet {
   color: #B9F18D;
 }
 
-* :deep() .ProseMirror pre code .hljs-title {
+* :deep(.ProseMirror) pre code .hljs-title {
   color: #FAF594;
 }
 
-* :deep() .ProseMirror pre code .hljs-section {
+* :deep(.ProseMirror) pre code .hljs-section {
   color: #FAF594;
 }
 
-* :deep() .ProseMirror pre code .hljs-keyword {
+* :deep(.ProseMirror) pre code .hljs-keyword {
   color: #70CFF8;
 }
 
-* :deep() .ProseMirror pre code .hljs-selector-tag {
+* :deep(.ProseMirror) pre code .hljs-selector-tag {
   color: #70CFF8;
 }
 
-* :deep() .ProseMirror pre code .hljs-emphasis {
+* :deep(.ProseMirror) pre code .hljs-emphasis {
   font-style: italic;
 }
 
-* :deep() .ProseMirror pre code .hljs-strong {
+* :deep(.ProseMirror) pre code .hljs-strong {
   font-weight: 700;
 }
