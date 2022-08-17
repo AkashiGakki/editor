@@ -35,6 +35,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "build:view": "vue-tsc --noEmit && vite build --config ./demo/vite.config.ts",
     "preview": "vite preview"
   },
   "dependencies": {
