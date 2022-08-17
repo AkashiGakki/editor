@@ -4,7 +4,6 @@ import TextEditor from '../src/components/TextEditor.vue'
 
 <template>
   <div id="root">
-    <h5>Root</h5>
     <TextEditor />
   </div>
 </template>
