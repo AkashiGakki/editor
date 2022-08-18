@@ -1,6 +1,6 @@
 {
   "name": "@use-kit/editor-react",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "files": [
     "dist"
@@ -36,7 +36,9 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "build:view": "vue-tsc --noEmit && vite build --config ./demo/vite.config.ts",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prepublishOnly": "nr build",
+    "release": "bumpp && npm publish"
   },
   "dependencies": {
     "@tiptap/react": "^2.0.0-beta.114",
