@@ -20,7 +20,7 @@ import TextEditor from '@use-kit/editor-vue'
 </template>
 ```
 
-## In react
+### In react
 
 ```shell
 pnpm i @use-kit/editor-react
