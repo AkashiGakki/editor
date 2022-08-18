@@ -17,11 +17,11 @@ import { Color } from '@tiptap/extension-color'
 import Dropcursor from '@tiptap/extension-dropcursor'
 import Typography from '@tiptap/extension-typography'
 
-
 // import { WebrtcProvider } from 'y-webrtc'
 // import * as Y from 'yjs'
 
 import Menu from './Menu'
+import '../styles/base.css'
 
 const MarkdownEditor = () => {
   // const ydoc = new Y.Doc()

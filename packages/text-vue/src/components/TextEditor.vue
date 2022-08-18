@@ -174,6 +174,7 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped>
+@import '../styles/base.css';
 @import '../styles/TextEditor.css';
 @import '../styles/CodeLowLight.css';
 </style>
