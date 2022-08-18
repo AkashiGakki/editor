@@ -40,13 +40,13 @@ const editor: ShallowRef<Editor> = useEditor({
     Collaboration.configure({
       document: ydoc,
     }),
-    // CollaborationCursor.configure({
-    //   provider,
-    //   user: {
-    //     name: '@akashi',
-    //     color: '#f783ac',
-    //   },
-    // }),
+    CollaborationCursor.configure({
+      provider,
+      user: {
+        name: '@akashi',
+        color: '#f783ac',
+      },
+    }),
     Placeholder.configure({
       placeholder: 'Typing something you want…… 🎉',
     }),

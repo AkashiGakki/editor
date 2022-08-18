@@ -40,9 +40,8 @@ const EditorView = () => {
 export default EditorView
 ```
 
-## Features && TODO
+## Features && Todo
 
-- `CollaborationCursor`
 - `Floating Menu`
 - `Font Family`
 - `Heading`
