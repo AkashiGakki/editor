@@ -42,3 +42,13 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+
+@media (prefers-color-scheme: dark) {
+  a:hover {
+    color: #747bff;
+  }
+
+  button {
+    background-color: #1a1a1a;
+  }
+}
